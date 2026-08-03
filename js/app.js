@@ -211,3 +211,32 @@ document.addEventListener("keydown",function(e){
     }
 
 });
+// Ctrl + V
+
+document.addEventListener("keydown", function(e){
+
+    if(e.ctrlKey && e.key==="v"){
+
+        if(copiedElement){
+
+            const clone = copiedElement.cloneNode(true);
+
+            clone.style.left =
+            (parseInt(copiedElement.style.left)+20)+"px";
+
+            clone.style.top =
+            (parseInt(copiedElement.style.top)+20)+"px";
+
+            document
+            .getElementById("drawingCanvas")
+            .appendChild(clone);
+
+            makeDraggable(clone);
+
+            addResizeHandle(clone);
+
+        }
+
+    }
+
+});
