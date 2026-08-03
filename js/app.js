@@ -165,3 +165,20 @@ document.addEventListener("keydown",function(e){
     }
 
 });
+// Canvas par click karne se selection remove
+
+document.getElementById("drawingCanvas").addEventListener("click", function(e){
+
+    if(e.target.id === "drawingCanvas"){
+
+        if(selectedElement){
+
+            selectedElement.classList.remove("selected");
+
+            selectedElement = null;
+
+        }
+
+    }
+
+});
