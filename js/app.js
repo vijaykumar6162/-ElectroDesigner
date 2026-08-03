@@ -394,3 +394,17 @@ canvas.addEventListener("mouseup", function(e){
     canvas.appendChild(line);
 
 });
+window.onload = function () {
+
+    const wireTool = document.getElementById("wireTool");
+    const selectTool = document.getElementById("selectTool");
+
+    console.log(wireTool);
+
+    wireTool.addEventListener("click", function () {
+
+        alert("Wire Tool Selected");
+
+    });
+
+};
