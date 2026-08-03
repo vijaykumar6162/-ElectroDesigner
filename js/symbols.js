@@ -31,7 +31,15 @@ function createSymbol(name){
 
     item.className = "canvas-symbol";
 
-    item.innerHTML = name;
+    const img = document.createElement("img");
+
+img.src = "assets/symbols/" + name.toLowerCase() + ".svg";
+
+img.style.width = "70px";
+
+img.style.height = "90px";
+
+item.appendChild(img);
 
     item.style.left = "100px";
 
