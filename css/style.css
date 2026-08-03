@@ -443,3 +443,56 @@ display:none;
 }
 
 }
+/*==============================
+      CANVAS SYMBOL
+==============================*/
+
+#drawingCanvas{
+
+    position:relative;
+
+}
+
+.canvas-symbol{
+
+    position:absolute;
+
+    width:90px;
+
+    height:60px;
+
+    background:white;
+
+    border:2px solid #2196f3;
+
+    border-radius:8px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:move;
+
+    user-select:none;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    color:black;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
+
+    transition:.2s;
+
+}
+
+.canvas-symbol:hover{
+
+    transform:scale(1.05);
+
+    border-color:#32cd32;
+
+}
