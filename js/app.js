@@ -343,3 +343,53 @@ drawingCanvas.addEventListener("mouseup", function(e){
     drawingCanvas.appendChild(line);
 
 });
+const canvas = document.getElementById("drawingCanvas");
+
+let drawing = false;
+let sx = 0;
+let sy = 0;
+
+canvas.addEventListener("mousedown", function(e){
+
+    if(currentTool !== "wire") return;
+
+    drawing = true;
+
+    sx = e.offsetX;
+
+    sy = e.offsetY;
+
+});
+
+canvas.addEventListener("mouseup", function(e){
+
+    if(currentTool !== "wire") return;
+
+    if(!drawing) return;
+
+    drawing = false;
+
+    const ex = e.offsetX;
+    const ey = e.offsetY;
+
+    const line = document.createElement("div");
+
+    line.className = "wire";
+
+    const length = Math.sqrt(
+        (ex-sx)*(ex-sx)+(ey-sy)*(ey-sy)
+    );
+
+    const angle = Math.atan2(
+        ey-sy,
+        ex-sx
+    ) * 180 / Math.PI;
+
+    line.style.width = length + "px";
+    line.style.left = sx + "px";
+    line.style.top = sy + "px";
+    line.style.transform = `rotate(${angle}deg)`;
+
+    canvas.appendChild(line);
+
+});
