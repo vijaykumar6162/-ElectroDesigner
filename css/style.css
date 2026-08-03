@@ -628,3 +628,10 @@ display:none;
     color:black !important;
 
 }
+.wire{
+    position:absolute;
+    height:3px;
+    background:#ff0000;
+    transform-origin:left center;
+    z-index:10;
+}
