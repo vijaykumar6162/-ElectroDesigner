@@ -1,5 +1,5 @@
 console.log("ElectroVolt Diagram Studio Started");
-console.log(document.getElementById("wireTool"));
+
 let selectedElement = null;
 let copiedElement = null;
 let currentTool = "select";
