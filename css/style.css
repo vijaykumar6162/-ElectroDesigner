@@ -570,3 +570,10 @@ display:none;
     outline-offset:2px;
 
 }
+.selected{
+
+    outline:3px solid #2196F3;
+
+    outline-offset:2px;
+
+}
