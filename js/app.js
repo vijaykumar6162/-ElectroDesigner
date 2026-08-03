@@ -37,6 +37,7 @@ imageInput.addEventListener("change", function () {
 
         document.getElementById("drawingCanvas").appendChild(img);
 makeDraggable(img);
+        addResizeHandle(img);
     };
 
     reader.readAsDataURL(file);
@@ -83,5 +84,60 @@ function makeDraggable(element){
         isDragging=false;
 
     });
+
+}
+function addResizeHandle(img){
+
+    const handle=document.createElement("div");
+
+    handle.className="resize-handle";
+
+    document.getElementById("drawingCanvas").appendChild(handle);
+
+    function updateHandle(){
+
+        handle.style.left=(img.offsetLeft+img.offsetWidth-6)+"px";
+
+        handle.style.top=(img.offsetTop+img.offsetHeight-6)+"px";
+
+    }
+
+    updateHandle();
+
+    let resizing=false;
+
+    handle.addEventListener("mousedown",function(e){
+
+        e.stopPropagation();
+
+        resizing=true;
+
+    });
+
+    document.addEventListener("mousemove",function(e){
+
+        if(!resizing) return;
+
+        const rect=document.getElementById("drawingCanvas").getBoundingClientRect();
+
+        img.style.width=(e.clientX-rect.left-img.offsetLeft)+"px";
+
+        img.style.height="auto";
+
+        updateHandle();
+
+    });
+
+    document.addEventListener("mouseup",function(){
+
+        resizing=false;
+
+    });
+
+    const oldDrag=makeDraggable;
+
+    makeDraggable(img);
+
+    img.addEventListener("mousemove",updateHandle);
 
 }
