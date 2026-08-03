@@ -563,3 +563,10 @@ display:none;
     z-index:9999;
 
 }
+.selected{
+
+    outline:3px solid #2196F3;
+
+    outline-offset:2px;
+
+}
