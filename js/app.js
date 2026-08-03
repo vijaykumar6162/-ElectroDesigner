@@ -1,6 +1,7 @@
 console.log("ElectroVolt Diagram Studio Started");
 let selectedElement = null;
 let copiedElement = null;
+let currentTool = "select";
 // Image Upload Button
 
 const imageBtn = document.getElementById("imageBtn");
