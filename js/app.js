@@ -240,3 +240,20 @@ document.addEventListener("keydown", function(e){
     }
 
 });
+// Toolbar Delete Button
+
+const deleteBtn = document.getElementById("deleteBtn");
+
+deleteBtn.addEventListener("click", function () {
+
+    if (selectedElement) {
+
+        selectedElement.classList.remove("selected");
+
+        selectedElement.remove();
+
+        selectedElement = null;
+
+    }
+
+});
