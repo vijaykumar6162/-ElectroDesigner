@@ -1,5 +1,6 @@
 console.log("ElectroVolt Diagram Studio Started");
 let selectedElement = null;
+let copiedElement = null;
 // Image Upload Button
 
 const imageBtn = document.getElementById("imageBtn");
@@ -178,6 +179,19 @@ document.getElementById("drawingCanvas").addEventListener("click", function(e){
             selectedElement = null;
 
         }
+
+    }
+
+});
+document.addEventListener("keydown",function(e){
+
+    if(e.key==="Delete" && selectedElement){
+
+        selectedElement.classList.remove("selected");
+
+        selectedElement.remove();
+
+        selectedElement = null;
 
     }
 
