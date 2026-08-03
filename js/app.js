@@ -152,3 +152,16 @@ function addResizeHandle(img){
     img.addEventListener("mousemove",updateHandle);
 
 }
+document.addEventListener("keydown",function(e){
+
+    if(e.key==="Delete" && selectedElement){
+
+        selectedElement.classList.remove("selected");
+
+        selectedElement.remove();
+
+        selectedElement = null;
+
+    }
+
+});
