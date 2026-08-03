@@ -270,7 +270,7 @@ const selectTool = document.getElementById("selectTool");
 wireTool.addEventListener("click", function () {
 
     currentTool = "wire";
-
+ alert("Wire Tool Selected");
     wireTool.classList.add("active-tool");
 
     selectTool.classList.remove("active-tool");
