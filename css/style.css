@@ -621,3 +621,10 @@ display:none;
     color:black;
 
 }
+.active-tool{
+
+    background:#32cd32 !important;
+
+    color:black !important;
+
+}
