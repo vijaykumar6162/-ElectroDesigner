@@ -258,3 +258,25 @@ deleteBtn.addEventListener("click", function () {
     }
 
 });
+const wireTool = document.getElementById("wireTool");
+const selectTool = document.getElementById("selectTool");
+
+wireTool.addEventListener("click", function () {
+
+    currentTool = "wire";
+
+    wireTool.classList.add("active-tool");
+
+    selectTool.classList.remove("active-tool");
+
+});
+
+selectTool.addEventListener("click", function () {
+
+    currentTool = "select";
+
+    selectTool.classList.add("active-tool");
+
+    wireTool.classList.remove("active-tool");
+
+});
