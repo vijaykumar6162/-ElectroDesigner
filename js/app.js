@@ -2,6 +2,12 @@ console.log("ElectroVolt Diagram Studio Started");
 let selectedElement = null;
 let copiedElement = null;
 let currentTool = "select";
+let currentTool = "select";
+let isDrawing = false;
+
+let startX = 0;
+
+let startY = 0;
 // Image Upload Button
 
 const imageBtn = document.getElementById("imageBtn");
@@ -278,5 +284,62 @@ selectTool.addEventListener("click", function () {
     selectTool.classList.add("active-tool");
 
     wireTool.classList.remove("active-tool");
+
+});
+const drawingCanvas = document.getElementById("drawingCanvas");
+
+drawingCanvas.addEventListener("mousedown", function(e){
+
+    if(currentTool !== "wire") return;
+
+    isDrawing = true;
+
+    startX = e.offsetX;
+
+    startY = e.offsetY;
+
+});
+
+drawingCanvas.addEventListener("mouseup", function(e){
+
+    if(currentTool !== "wire") return;
+
+    if(!isDrawing) return;
+
+    isDrawing = false;
+
+    const line = document.createElement("div");
+
+    line.className = "wire-line";
+
+    const endX = e.offsetX;
+
+    const endY = e.offsetY;
+
+    const length = Math.sqrt(
+
+        Math.pow(endX-startX,2)+
+
+        Math.pow(endY-startY,2)
+
+    );
+
+    const angle = Math.atan2(
+
+        endY-startY,
+
+        endX-startX
+
+    ) * 180 / Math.PI;
+
+    line.style.width = length + "px";
+
+    line.style.left = startX + "px";
+
+    line.style.top = startY + "px";
+
+    line.style.transform = "rotate(" + angle + "deg)";
+
+    drawingCanvas.appendChild(line);
 
 });
