@@ -544,3 +544,22 @@ display:none;
     pointer-events:none;
 
 }
+.resize-handle{
+
+    position:absolute;
+
+    width:12px;
+
+    height:12px;
+
+    background:#2196F3;
+
+    border:2px solid white;
+
+    border-radius:50%;
+
+    cursor:nwse-resize;
+
+    z-index:9999;
+
+}
