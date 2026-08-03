@@ -1,4 +1,5 @@
 console.log("ElectroVolt Diagram Studio Started");
+let selectedElement = null;
 // Image Upload Button
 
 const imageBtn = document.getElementById("imageBtn");
@@ -51,15 +52,25 @@ function makeDraggable(element){
 
     let offsetY = 0;
 
-    element.addEventListener("mousedown",function(e){
+  element.addEventListener("mousedown",function(e){
 
-        isDragging = true;
+    if(selectedElement){
 
-        offsetX = e.offsetX;
+        selectedElement.classList.remove("selected");
 
-        offsetY = e.offsetY;
+    }
 
-    });
+    selectedElement = element;
+
+    selectedElement.classList.add("selected");
+
+    isDragging = true;
+
+    offsetX = e.offsetX;
+
+    offsetY = e.offsetY;
+
+});
 
     document.addEventListener("mousemove",function(e){
 
