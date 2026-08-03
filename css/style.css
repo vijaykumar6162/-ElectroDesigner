@@ -521,3 +521,26 @@ display:none;
     gap:5px;
 
 }
+.canvas-symbol{
+
+    background:transparent;
+
+    border:none;
+
+    box-shadow:none;
+
+    width:auto;
+
+    height:auto;
+
+}
+
+.canvas-symbol img{
+
+    width:70px;
+
+    height:90px;
+
+    pointer-events:none;
+
+}
