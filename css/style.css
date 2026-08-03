@@ -279,7 +279,7 @@ body{
 /* Drawing Area */
 
 #drawingCanvas{
-
+ position: relative;
     flex:1;
 
     background-color:white;
