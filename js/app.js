@@ -196,3 +196,18 @@ document.addEventListener("keydown",function(e){
     }
 
 });
+// Ctrl + C
+
+document.addEventListener("keydown",function(e){
+
+    if(e.ctrlKey && e.key==="c"){
+
+        if(selectedElement){
+
+            copiedElement = selectedElement.cloneNode(true);
+
+        }
+
+    }
+
+});
