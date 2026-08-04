@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     canvas.addEventListener("click", function (e) {
 
         if (window.currentTool !== "wire") return;
-
+console.log("Wire Tool Click");
         // First Click
         if (startPoint === null) {
 
