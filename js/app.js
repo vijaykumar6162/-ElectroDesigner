@@ -350,7 +350,7 @@ let drawing = false;
 let sx = 0;
 let sy = 0;
 
-canvas.addEventListener("mousedown", function(e){
+wirecanvas.addEventListener("mousedown", function(e){
 
     if(currentTool !== "wire") return;
 
@@ -391,7 +391,7 @@ wireCanvas.addEventListener("mouseup", function(e){
     line.style.top = sy + "px";
     line.style.transform = `rotate(${angle}deg)`;
 
-    canvas.appendChild(line);
+   wireCanvas.appendChild(line);
 
 });
 window.onload = function () {
