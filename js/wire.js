@@ -67,8 +67,19 @@ console.log("Wire Tool Click");
         vertical.style.height =
             Math.abs(endY - startPoint.y) + "px";
 
-        canvas.appendChild(vertical);
-        drawing = false;
+       canvas.appendChild(vertical);
+
+if (previewH) {
+    previewH.remove();
+    previewH = null;
+}
+
+if (previewV) {
+    previewV.remove();
+    previewV = null;
+}
+
+drawing = false;
 startPoint = null;
 
 
