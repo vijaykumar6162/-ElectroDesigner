@@ -15,6 +15,7 @@ let drawing = false;
     canvas.addEventListener("mousedown", function (e) {
 
         if (window.currentTool !== "wire") return;
+        drawing = true;
 console.log("Wire Tool Click");
         // First Click
         if (startPoint === null) {
