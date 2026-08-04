@@ -3,7 +3,7 @@
 =====================================*/
 
 const symbolItems = document.querySelectorAll(".symbol");
-const drawingCanvas = document.getElementById("drawingCanvas");
+const symbolCanvas = document.getElementById("drawingCanvas");
 
 let selectedSymbol = null;
 
