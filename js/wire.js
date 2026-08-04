@@ -68,13 +68,8 @@ console.log("Wire Tool Click");
             Math.abs(endY - startPoint.y) + "px";
 
         canvas.appendChild(vertical);
+startPoint = null;
 
-        startPoint = null;
-canvas.addEventListener("mouseup", function () {
-
-    // Future Wire Finish
-
-});
     });
 
 });
