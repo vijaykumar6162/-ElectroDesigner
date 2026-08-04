@@ -294,9 +294,9 @@ drawingCanvas.addEventListener("mousedown", function(e){
 
     isDrawing = true;
 
-    startX = e.offsetX;
+    wirestartX = e.offsetX;
 
-    startY = e.offsetY;
+    wirestartY = e.offsetY;
 
 });
 
@@ -318,25 +318,25 @@ drawingCanvas.addEventListener("mouseup", function(e){
 
     const length = Math.sqrt(
 
-        Math.pow(endX-startX,2)+
+        Math.pow(endX-wirestartX,2)+
 
-        Math.pow(endY-startY,2)
+        Math.pow(endY-wirestartY,2)
 
     );
 
     const angle = Math.atan2(
 
-        endY-startY,
+        endY-wirestartY,
 
-        endX-startX
+        endX-wirestartX
 
     ) * 180 / Math.PI;
 
     line.style.width = length + "px";
 
-    line.style.left = startX + "px";
+    line.style.left = wirestartX + "px";
 
-    line.style.top = startY + "px";
+    line.style.top = wirestartY + "px";
 
     line.style.transform = "rotate(" + angle + "deg)";
 
