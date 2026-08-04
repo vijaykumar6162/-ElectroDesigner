@@ -14,10 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    wireTool.addEventListener("click", () => {
+  wireTool.addEventListener("click", () => {
 
-        alert("Wire Tool Selected");
+    window.currentTool = "wire";
 
-    });
+    alert("Wire Tool Activated");
 
 });
