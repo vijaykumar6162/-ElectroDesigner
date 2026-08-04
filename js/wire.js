@@ -70,6 +70,20 @@ console.log("Wire Tool Click");
         canvas.appendChild(vertical);
 startPoint = null;
 
+
+});
+    canvas.addEventListener("mousemove", function (e) {
+
+    if (window.currentTool !== "wire") return;
+
+    if (!drawing) return;
+
+    console.log("Mouse:", e.offsetX, e.offsetY);
+
+});
+    canvas.addEventListener("mouseup", function () {
+
+    drawing = false;
     });
 
 });
