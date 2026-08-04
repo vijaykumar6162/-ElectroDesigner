@@ -287,27 +287,7 @@ selectTool.addEventListener("click", function () {
 
 });
 
-const wireCanvas = document.getElementById("drawingCanvas");
 
-let drawing = false;
-let sx = 0;
-let sy = 0;
-
-
-
-    const angle = Math.atan2(
-        ey-sy,
-        ex-sx
-    ) * 180 / Math.PI;
-
-    line.style.width = length + "px";
-    line.style.left = sx + "px";
-    line.style.top = sy + "px";
-    line.style.transform = `rotate(${angle}deg)`;
-
-   wireCanvas.appendChild(line);
-
-});
 window.onload = function () {
 
     const wireTool = document.getElementById("wireTool");
