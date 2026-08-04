@@ -68,6 +68,7 @@ console.log("Wire Tool Click");
             Math.abs(endY - startPoint.y) + "px";
 
         canvas.appendChild(vertical);
+        drawing = false;
 startPoint = null;
 
 
