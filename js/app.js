@@ -6,9 +6,8 @@ let currentTool = "select";
 
 let isDrawing = false;
 
-let startX = 0;
-
-let startY = 0;
+let wireStartX = 0;
+let wireStartY = 0;
 // Image Upload Button
 
 const imageBtn = document.getElementById("imageBtn");
