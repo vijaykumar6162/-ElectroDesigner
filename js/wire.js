@@ -9,7 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const canvas = document.getElementById("drawingCanvas");
 
     let startPoint = null;
-
+let previewH = null;
+let previewV = null;
+let drawing = false;
     canvas.addEventListener("mousedown", function (e) {
 
         if (window.currentTool !== "wire") return;
