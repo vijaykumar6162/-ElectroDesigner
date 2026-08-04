@@ -79,7 +79,20 @@ startPoint = null;
     if (!drawing) return;
 
     console.log("Mouse:", e.offsetX, e.offsetY);
+if (previewH) previewH.remove();
+if (previewV) previewV.remove();
 
+previewH = document.createElement("div");
+
+previewH.style.position = "absolute";
+previewH.style.background = "red";
+previewH.style.height = "3px";
+
+previewH.style.left = startPoint.x + "px";
+previewH.style.top = startPoint.y + "px";
+previewH.style.width = Math.abs(e.offsetX - startPoint.x) + "px";
+
+canvas.appendChild(previewH);
 });
     canvas.addEventListener("mouseup", function () {
 
