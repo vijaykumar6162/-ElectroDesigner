@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let startPoint = null;
 
-    canvas.addEventListener("click", function (e) {
+    canvas.addEventListener("mousedown", function (e) {
 
         if (window.currentTool !== "wire") return;
 console.log("Wire Tool Click");
@@ -67,7 +67,11 @@ console.log("Wire Tool Click");
         canvas.appendChild(vertical);
 
         startPoint = null;
+canvas.addEventListener("mouseup", function () {
 
+    // Future Wire Finish
+
+});
     });
 
 });
