@@ -362,7 +362,7 @@ canvas.addEventListener("mousedown", function(e){
 
 });
 
-canvas.addEventListener("mouseup", function(e){
+wireCanvas.addEventListener("mouseup", function(e){
 
     if(currentTool !== "wire") return;
 
