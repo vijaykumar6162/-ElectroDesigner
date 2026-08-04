@@ -344,7 +344,7 @@ drawingCanvas.addEventListener("mouseup", function(e){
     drawingCanvas.appendChild(line);
 
 });
-const canvas = document.getElementById("drawingCanvas");
+const wireCanvas = document.getElementById("drawingCanvas");
 
 let drawing = false;
 let sx = 0;
