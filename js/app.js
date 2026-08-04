@@ -349,7 +349,7 @@ let drawing = false;
 let sx = 0;
 let sy = 0;
 
-wirecanvas.addEventListener("mousedown", function(e){
+wireCanvas.addEventListener("mousedown", function(e){
 
     if(currentTool !== "wire") return;
 
