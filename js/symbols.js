@@ -40,11 +40,8 @@ img.style.width = "70px";
 img.style.height = "90px";
 
 item.appendChild(img);
-
-    item.style.left = "100px";
-
-    item.style.top = "100px";
-
+item.style.left = (150 + Math.random() * 200) + "px";
+item.style.top = (80 + Math.random() * 150) + "px";
     drawingCanvas.appendChild(item);
 
     enableDrag(item);
