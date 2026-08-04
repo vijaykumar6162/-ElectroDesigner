@@ -25,10 +25,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
         } else {
 
-            alert("Wire End Selected");
+            const line = document.createElement("div");
 
-            startPoint = null;
+line.style.position = "absolute";
+line.style.background = "red";
+line.style.height = "3px";
+line.style.transformOrigin = "left center";
 
+const endX = e.offsetX;
+const endY = e.offsetY;
+
+const length = Math.sqrt(
+    (endX - startPoint.x) ** 2 +
+    (endY - startPoint.y) ** 2
+);
+
+const angle = Math.atan2(
+    endY - startPoint.y,
+    endX - startPoint.x
+) * 180 / Math.PI;
+
+line.style.width = length + "px";
+line.style.left = startPoint.x + "px";
+line.style.top = startPoint.y + "px";
+line.style.transform = `rotate(${angle}deg)`;
+
+canvas.appendChild(line);
+
+startPoint = null;
         }
 
     });
