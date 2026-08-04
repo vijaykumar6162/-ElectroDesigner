@@ -1,5 +1,5 @@
 // =========================
-// Wire Tool
+// ElectroVolt Wire Tool
 // =========================
 
 console.log("Wire Loaded");
@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (window.currentTool !== "wire") return;
 
+        // First Click
         if (startPoint === null) {
 
             startPoint = {
@@ -22,61 +23,50 @@ document.addEventListener("DOMContentLoaded", () => {
             };
 
             alert("Wire Start Selected");
-
-        } else {
-
-          const horizontal = document.createElement("div");
-const vertical = document.createElement("div");
-
-horizontal.style.position = "absolute";
-horizontal.style.background = "red";
-horizontal.style.height = "3px";
-
-vertical.style.position = "absolute";
-vertical.style.background = "red";
-vertical.style.width = "3px";
-
-line.style.position = "absolute";
-line.style.background = "red";
-line.style.height = "3px";
-line.style.transformOrigin = "left center";
-
-const endX = e.offsetX;
-const endY = e.offsetY;
-
-const length = Math.sqrt(
-    (endX - startPoint.x) ** 2 +
-    (endY - startPoint.y) ** 2
-);
-
-const angle = Math.atan2(
-    endY - startPoint.y,
-    endX - startPoint.x
-) * 180 / Math.PI;
-
-line.style.width = length + "px";
-line.style.left = startPoint.x + "px";
-line.style.top = startPoint.y + "px";
-line.style.transform = `rotate(${angle}deg)`;
-
-horizontal.style.left = startPoint.x + "px";
-horizontal.style.top = startPoint.y + "px";
-
-horizontal.style.width =
-(endX - startPoint.x) + "px";
-
-canvas.appendChild(horizontal);
-
-vertical.style.left = endX + "px";
-vertical.style.top = startPoint.y + "px";
-
-vertical.style.height =
-(endY - startPoint.y) + "px";
-
-canvas.appendChild(vertical);
-
-startPoint = null;
+            return;
         }
+
+        // Second Click
+        const endX = e.offsetX;
+        const endY = e.offsetY;
+
+        // ---------- Horizontal Wire ----------
+        const horizontal = document.createElement("div");
+
+        horizontal.style.position = "absolute";
+        horizontal.style.background = "red";
+        horizontal.style.height = "3px";
+
+        horizontal.style.left =
+            Math.min(startPoint.x, endX) + "px";
+
+        horizontal.style.top =
+            startPoint.y + "px";
+
+        horizontal.style.width =
+            Math.abs(endX - startPoint.x) + "px";
+
+        canvas.appendChild(horizontal);
+
+        // ---------- Vertical Wire ----------
+        const vertical = document.createElement("div");
+
+        vertical.style.position = "absolute";
+        vertical.style.background = "red";
+        vertical.style.width = "3px";
+
+        vertical.style.left =
+            endX + "px";
+
+        vertical.style.top =
+            Math.min(startPoint.y, endY) + "px";
+
+        vertical.style.height =
+            Math.abs(endY - startPoint.y) + "px";
+
+        canvas.appendChild(vertical);
+
+        startPoint = null;
 
     });
 
