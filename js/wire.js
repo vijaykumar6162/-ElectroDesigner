@@ -94,6 +94,17 @@ previewH.style.top = startPoint.y + "px";
 previewH.style.width = Math.abs(e.offsetX - startPoint.x) + "px";
 
 canvas.appendChild(previewH);
+        previewV = document.createElement("div");
+
+previewV.style.position = "absolute";
+previewV.style.background = "red";
+previewV.style.width = "3px";
+
+previewV.style.left = e.offsetX + "px";
+previewV.style.top = Math.min(startPoint.y, e.offsetY) + "px";
+previewV.style.height = Math.abs(e.offsetY - startPoint.y) + "px";
+
+canvas.appendChild(previewV);
 });
     canvas.addEventListener("mouseup", function () {
 
