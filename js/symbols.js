@@ -76,7 +76,7 @@ function enableDrag(item){
 
         if(!dragging) return;
 
-        const rect = drawingCanvas.getBoundingClientRect();
+        const rect = symbolCanvas.getBoundingClientRect();
 
         item.style.left = (e.clientX - rect.left - offsetX) + "px";
 
