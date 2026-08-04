@@ -286,63 +286,7 @@ selectTool.addEventListener("click", function () {
     wireTool.classList.remove("active-tool");
 
 });
-const drawingCanvas = document.getElementById("drawingCanvas");
 
-drawingCanvas.addEventListener("mousedown", function(e){
-
-    if(currentTool !== "wire") return;
-
-    isDrawing = true;
-
-    wirestartX = e.offsetX;
-
-    wirestartY = e.offsetY;
-
-});
-
-drawingCanvas.addEventListener("mouseup", function(e){
-
-    if(currentTool !== "wire") return;
-
-    if(!isDrawing) return;
-
-    isDrawing = false;
-
-    const line = document.createElement("div");
-
-    line.className = "wire-line";
-
-    const endX = e.offsetX;
-
-    const endY = e.offsetY;
-
-    const length = Math.sqrt(
-
-        Math.pow(endX-wirestartX,2)+
-
-        Math.pow(endY-wirestartY,2)
-
-    );
-
-    const angle = Math.atan2(
-
-        endY-wirestartY,
-
-        endX-wirestartX
-
-    ) * 180 / Math.PI;
-
-    line.style.width = length + "px";
-
-    line.style.left = wirestartX + "px";
-
-    line.style.top = wirestartY + "px";
-
-    line.style.transform = "rotate(" + angle + "deg)";
-
-    drawingCanvas.appendChild(line);
-
-});
 const wireCanvas = document.getElementById("drawingCanvas");
 
 let drawing = false;
