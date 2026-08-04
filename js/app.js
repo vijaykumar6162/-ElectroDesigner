@@ -293,36 +293,7 @@ let drawing = false;
 let sx = 0;
 let sy = 0;
 
-wireCanvas.addEventListener("mousedown", function(e){
 
-    if(currentTool !== "wire") return;
-
-    drawing = true;
-
-    sx = e.offsetX;
-
-    sy = e.offsetY;
-
-});
-
-wireCanvas.addEventListener("mouseup", function(e){
-
-    if(currentTool !== "wire") return;
-
-    if(!drawing) return;
-
-    drawing = false;
-
-    const ex = e.offsetX;
-    const ey = e.offsetY;
-
-    const line = document.createElement("div");
-
-    line.className = "wire";
-
-    const length = Math.sqrt(
-        (ex-sx)*(ex-sx)+(ey-sy)*(ey-sy)
-    );
 
     const angle = Math.atan2(
         ey-sy,
