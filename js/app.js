@@ -3,7 +3,7 @@ console.log("ElectroVolt Diagram Studio Started");
 let selectedElement = null;
 let copiedElement = null;
 let currentTool = "select";
-let currentTool = "select";
+
 let isDrawing = false;
 
 let startX = 0;
