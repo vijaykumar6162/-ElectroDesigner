@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 y: e.offsetY
             };
 
-            alert("Wire Start Selected");
+           
             return;
         }
 
