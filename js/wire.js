@@ -59,7 +59,21 @@ line.style.left = startPoint.x + "px";
 line.style.top = startPoint.y + "px";
 line.style.transform = `rotate(${angle}deg)`;
 
-canvas.appendChild(line);
+horizontal.style.left = startPoint.x + "px";
+horizontal.style.top = startPoint.y + "px";
+
+horizontal.style.width =
+(endX - startPoint.x) + "px";
+
+canvas.appendChild(horizontal);
+
+vertical.style.left = endX + "px";
+vertical.style.top = startPoint.y + "px";
+
+vertical.style.height =
+(endY - startPoint.y) + "px";
+
+canvas.appendChild(vertical);
 
 startPoint = null;
         }
