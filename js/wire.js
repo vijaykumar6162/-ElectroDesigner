@@ -25,7 +25,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
         } else {
 
-            const line = document.createElement("div");
+          const horizontal = document.createElement("div");
+const vertical = document.createElement("div");
+
+horizontal.style.position = "absolute";
+horizontal.style.background = "red";
+horizontal.style.height = "3px";
+
+vertical.style.position = "absolute";
+vertical.style.background = "red";
+vertical.style.width = "3px";
 
 line.style.position = "absolute";
 line.style.background = "red";
